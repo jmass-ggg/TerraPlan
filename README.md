@@ -1,237 +1,412 @@
 # 🌱 TerraPlan
 
 <p align="center">
-  <img src="photos/logo.png" alt="TerraPlan logo" width="220" />
+  <strong>Climate intelligence for better farming decisions in Kenya.</strong>
 </p>
 
-<p align="center">
-  <strong>Understand your land before you plant.</strong>
-</p>
+**TerraPlan** is a climate-smart agricultural decision-support platform designed around the needs of **Kenyan farmers**.
 
-## Why I Built TerraPlan
+It combines **JKUAT Conduit weather observations, weather forecasts, satellite imagery, soil data, terrain, and historical climate information** to answer one practical question:
 
-Kenyan farmers make high-risk decisions every season: **what to plant, when to plant, whether rainfall will be enough, and what climate risks to prepare for**.
-
-Those decisions are becoming harder because Kenya faces both drought and extreme rainfall. Kenya's **2026–2030 Disaster Risk Financing Strategy** states that more than **80% of the country's landmass is arid or semi-arid**, making drought a major national risk.
-
-The **Kenya Meteorological Department** also reported that **2024 was Kenya's hottest year on record**, while rainfall varied sharply between regions and flooding caused crop, livestock, infrastructure, and livelihood losses.
-
-At the same time, farmers often have to interpret information from separate systems: weather forecasts, soil databases, satellite imagery, terrain models, and historical climate records.
-
-FAO Kenya highlighted this gap in 2026, explaining that farmers need **timely, reliable, and actionable climate information** for decisions such as planting, water management, input application, and harvesting.
-
-**TerraPlan was built to turn scattered environmental data into farm-specific agricultural decisions.**
+> **What should I grow on this land, and what climate risks should I prepare for?**
 
 ---
 
-## 🌍 What Is TerraPlan?
+## 🇰🇪 The Problem in Kenya
 
-**TerraPlan** is a climate-smart agricultural decision-support platform.
+Agriculture in Kenya is highly exposed to changing rainfall, drought, heat, and flooding.
 
-A user selects their farm on a map, and TerraPlan combines available:
+More than **80% of Kenya's landmass is arid or semi-arid**, while other regions experience intense seasonal rainfall and flooding.
 
-* Weather data
-* Satellite observations
-* Soil information
-* Terrain and elevation
-* Historical climate
-* Ground observations
+In **2024, Kenya recorded its hottest year on record**, alongside major rainfall variability and destructive floods.
 
-to create a **digital environmental profile of that farm**.
+For a farmer, this creates difficult decisions:
 
-Instead of only showing raw environmental data, TerraPlan helps answer:
+* What should I plant?
+* Will there be enough rainfall?
+* Is this crop suitable for my soil?
+* Is drought or heat becoming dangerous?
+* Should I plant now or wait?
 
-> **What crops are suitable for this land?**
-> **Is rainfall likely to be enough?**
-> **What climate risks should I prepare for?**
-> **What should I plant during different seasons?**
-
----
-
-## ⚙️ How TerraPlan Works
+The environmental information needed to answer these questions already exists, but it is scattered across different systems.
 
 ```text
-Select Farm Boundary
-        ↓
-Collect Environmental Evidence
-        ↓
-Weather + Satellite + Soil + Terrain + Climate
-        ↓
-Build Farm Digital Twin
-        ↓
-Crop + Water + Climate Risk Analysis
-        ↓
-Generate Agricultural Decisions
-        ↓
-Create Seasonal Crop Plan
+Weather
+Satellite
+Soil
+Terrain
+Historical Climate
+Ground Sensors
+      ↓
+   TerraPlan
+      ↓
+Farmer Decision
 ```
 
-![TerraPlan environmental intelligence workflow](photos/workflow.png)
+**TerraPlan brings these signals together and converts them into practical agricultural intelligence.**
 
 ---
 
-## 🌾 Core Features
+# 💡 From Data to Farmer Action
 
-### 1. Farm Digital Twin
+A farmer selects or draws their farm boundary on the map.
 
-The user draws a farm boundary using an interactive map.
+TerraPlan then builds a **Farm Digital Twin** using environmental evidence for that specific location.
 
-TerraPlan builds an environmental snapshot using available information such as temperature, rainfall, soil properties, vegetation condition, moisture indicators, elevation, slope, historical climate, and eligible ground observations.
+```text
+Farm Boundary
+      ↓
+Conduit + Weather + Satellite
+Soil + Terrain + Climate
+      ↓
+Farm Digital Twin
+      ↓
+Crop Suitability + Climate Risks
+      ↓
+Seasonal Recommendation
+      ↓
+Farmer Action
+```
 
-### 2. Crop Simulator — “What If I Grow This?”
-
-TerraPlan compares crop requirements with farm conditions using a deterministic scoring engine.
-
-| Factor                         | Weight |
-| ------------------------------ | -----: |
-| Temperature                    |    25% |
-| Rainfall / Water               |    30% |
-| Soil compatibility             |    20% |
-| Heat safety                    |    10% |
-| Drought / Flood safety         |    10% |
-| NDVI / Environmental condition |     5% |
-
-Instead of only returning a percentage, TerraPlan also shows the **limiting factor and explanation** behind the result.
-
-### 3. Climate & Water Risk
-
-TerraPlan evaluates indicators related to:
-
-* Rainfall deficit
-* Drought
-* Heat stress
-* Heavy rainfall
-* Terrain-related flood exposure
-* Wind exposure
-* Crop rainfall adequacy
-
-This moves beyond a generic forecast such as:
+Instead of only saying:
 
 > *“Rain is expected.”*
 
-and toward the more useful question:
+TerraPlan helps answer:
 
-> **“What does this weather mean for this farm and this crop?”**
+> **“Is that rainfall enough for maize on my farm?”**
 
-### 4. Seasonal Crop Plan
+> **“Is drought stress increasing?”**
 
-TerraPlan combines crop suitability, seasonal climate context, crop duration, planting periods, farm allocation, and rotation rules to create a farm-specific seasonal plan.
+> **“Would sorghum be a safer crop under these conditions?”**
+
+That is TerraPlan's core idea:
+
+**Data → Insight → Decision → Action**
+
+---
+
+# 🗺️ Farm Digital Twin
+
+Each farm receives an environmental profile containing information such as:
+
+* Temperature
+* Rainfall
+* Humidity
+* Wind
+* Soil pH and texture
+* NDVI / NDMI vegetation indicators
+* Elevation and slope
+* Historical climate
+* Vapor Pressure Deficit
+* Ground weather-station observations
+
+TerraPlan also tracks the **source, timestamp, quality, availability, and data mode** of environmental evidence.
+
+This makes recommendations easier to understand and trace back to their source.
+
+---
+
+# 🌾 Crop Simulator
+
+The Crop Simulator answers:
+
+> **“What if I grow this crop here?”**
+
+TerraPlan compares crop requirements with the farm environment and calculates a **0–100 suitability score**.
+
+| Factor                  | Weight |
+| ----------------------- | -----: |
+| Water / Rainfall        |    30% |
+| Temperature             |    25% |
+| Soil Compatibility      |    20% |
+| Heat Safety             |    10% |
+| Drought / Flood Safety  |    10% |
+| Environmental Condition |     5% |
+
+TerraPlan supports **12 crops relevant to Kenyan agriculture**:
+
+**Maize · Beans · Sorghum · Cowpea · Kale · Tomatoes · Cabbage · Carrots · Onions · Potatoes · Spinach · Sweet Potatoes**
+
+Example:
 
 ```text
-MAR ───── JUN   🌽 Maize
-JUL ───── SEP   🥬 Kale
-OCT ───── DEC   🫘 Beans
+🌽 MAIZE — 88/100
+Good Match
+
+Temperature       94
+Water             88
+Soil              82
+Heat Safety      100
+Drought Safety    85
+Environment       72
+
+Limiting factor:
+Environmental condition
 ```
 
----
-
-## 🛰️ Environmental Data Sources
-
-| Data                | Source                   | Purpose                                    |
-| ------------------- | ------------------------ | ------------------------------------------ |
-| Weather             | Open-Meteo               | Temperature, precipitation, wind, forecast |
-| Satellite           | Sentinel-2 / Copernicus  | NDVI, NDMI, vegetation condition           |
-| Soil                | SoilGrids                | Modeled soil properties and texture        |
-| Terrain             | Copernicus DEM GLO-30    | Elevation and slope                        |
-| Historical Climate  | Open-Meteo / ERA5-family | Seasonal rainfall and temperature context  |
-| Ground Observations | JKUAT Conduit            | Temperature, humidity, wind, VPD           |
-
-The current JKUAT Conduit integration uses an **imported historical dataset**, not a live real-time feed.
+Rather than giving farmers only a score, TerraPlan explains **why the crop received that score and which environmental factor may limit it**.
 
 ---
 
-## 🔎 Trustworthy by Design
+# 🌦️ Climate Risk Intelligence
 
-TerraPlan does not silently replace missing environmental evidence with fake “live” values.
+TerraPlan evaluates five important agricultural climate risks:
 
-Environmental snapshots can preserve information such as:
+🌵 **Drought**
+🔥 **Heat Stress**
+🌧️ **Heavy Rainfall**
+🌊 **Flood Exposure**
+💨 **Wind**
 
-* Provider/source
-* Acquisition and retrieval time
-* Availability status
-* Data mode
-* Quality information
+It combines environmental evidence with historical climate context to produce understandable risk information.
+
+Example:
+
+```text
+DROUGHT RISK: HIGH
+Severity: 86 / 100
+
+Rainfall:         12 mm
+Climate baseline: 85 mm
+Rainfall deficit: 86%
+VPD:              2.9 kPa
+
+Suggested actions:
+• Conserve soil moisture with mulch
+• Consider supplemental irrigation
+• Delay moisture-sensitive planting
+```
+
+The goal is to move from:
+
+**“What is happening?”**
+
+to:
+
+**“What should the farmer do about it?”**
+
+---
+
+# 📅 Seasonal Crop Planning
+
+TerraPlan can turn individual crop recommendations into a yearly farming plan.
+
+```text
+MAR ───── JUN
+🌽 Maize
+
+JUL ───── SEP
+🥬 Kale
+
+OCT ───── DEC
+🫘 Beans
+```
+
+The planner considers:
+
+* Crop suitability
+* Seasonal climate
+* Crop duration
+* Planting windows
+* Harvest timing
+* Crop rotation
+* Environmental changes
+
+This helps farmers plan beyond a single planting decision.
+
+---
+
+# 🔬 What-If Climate Simulation
+
+Kenyan farmers increasingly have to plan under uncertain climate conditions.
+
+TerraPlan allows users to explore questions such as:
+
+> **What happens to maize suitability if rainfall decreases by 30%?**
+
+> **Would sorghum perform better under hotter and drier conditions?**
+
+> **How does crop suitability change if temperatures rise?**
+
+The system recalculates crop suitability using the modified environmental scenario.
+
+This lets farmers explore possible future conditions **before planting**.
+
+---
+
+# 🛰️ Environmental Data Sources
+
+TerraPlan combines six environmental sources.
+
+| Source             | Role in TerraPlan                                       |
+| ------------------ | ------------------------------------------------------- |
+| **JKUAT Conduit**  | Farm-local temperature, humidity, wind and VPD evidence |
+| **Open-Meteo**     | Weather forecasts, rainfall, temperature and wind       |
+| **Sentinel-2**     | NDVI, NDMI and vegetation condition                     |
+| **SoilGrids**      | Soil pH, texture and crop compatibility                 |
+| **Copernicus DEM** | Elevation, slope and flood exposure                     |
+| **ERA5-Land**      | Historical rainfall and temperature baselines           |
+
+The value is not simply displaying these datasets.
+
+The value is **combining them into one agricultural decision**.
+
+---
+
+# 🇰🇪 JKUAT Conduit → Agricultural Intelligence
+
+A key part of TerraPlan is its integration with the **JKUAT Conduit Data Platform**.
+
+Conduit weather-station observations pass through TerraPlan's processing pipeline:
+
+```text
+JKUAT Conduit
+      ↓
+Parsing & Validation
+      ↓
+Normalization & Quality Control
+      ↓
+Deduplication
+      ↓
+Hourly / Daily Aggregation
+      ↓
+Farm Relevance Check
+      ↓
+Farm Digital Twin
+      ↓
+Crop & Risk Analysis
+```
+
+The pipeline processes signals such as:
+
+* Temperature
+* Humidity
+* Wind speed
+* Wind gusts
+* Sensor quality
 * Geographic relevance
+* Vapor Pressure Deficit
 
-Crop suitability and risk calculations are **deterministic**.
-
-AI is used only to explain calculated results in simpler language. It does **not** generate or override the numerical crop suitability or risk scores.
-
----
-
-## 🏗️ Architecture
+TerraPlan can use temperature and humidity to calculate **Vapor Pressure Deficit (VPD)**, an indicator of atmospheric moisture stress.
 
 ```text
-React + TypeScript + MapLibre
-            ↓
-         FastAPI
-            ↓
- Environmental Provider Layer
-            ↓
-Weather + Satellite + Soil + Terrain
-      + Climate + Conduit
-            ↓
- Versioned Environmental Snapshot
-            ↓
-      Farm Digital Twin
-            ↓
-Crop + Risk + Water + Planner Engines
-            ↓
-     Optional AI Explanation
+Temperature + Humidity
+        ↓
+       VPD
+        ↓
+Moisture Stress
+        ↓
+Drought Safety
+        ↓
+Farmer Recommendation
 ```
 
-### Tech Stack
+Instead of showing a farmer:
 
-**Frontend:** React 19, TypeScript, Vinext/Vite, Tailwind CSS, MapLibre GL JS, Turf.js
-**Backend:** FastAPI, Python 3.12, SQLAlchemy, Pydantic
-**Database:** PostgreSQL, PostGIS, Redis
-**Optimization:** OR-Tools
-**Infrastructure:** Docker, Docker Compose
-**Testing:** Pytest, Hypothesis, Vitest
+```text
+VPD = 2.9 kPa
+```
 
----
+TerraPlan can translate it into:
 
-## 📚 Research & Evidence I Studied
+> **High evaporative stress is present. Moisture conservation or supplemental irrigation may be needed.**
 
-TerraPlan's problem framing and solution design were informed by research into **Kenyan rain-fed agriculture, climate variability, drought, farmer adaptation, and climate-smart agriculture**.
-
-### Government & Climate Sources
-
-**1. Kenya Disaster Risk Financing Strategy 2026–2030 — Government of Kenya**
-
-Used to understand Kenya's exposure to drought, floods, heat stress, and the scale of its arid and semi-arid regions.
-
-**2. State of the Climate Report, Kenya 2024 — Kenya Meteorological Department**
-
-Used to study temperature extremes, rainfall variability, flooding, and agricultural impacts.
-
-**3. FAO Agrometeorological Advisory Services in Kenya — 2026**
-
-Helped validate the need to translate climate forecasts into practical recommendations for planting, water management, inputs, and harvesting.
-
-### Research Papers
-
-**4. “Response to Climate Change in a Rain-Fed Crop Production System: Insights from Maize Farmers of Western Kenya” — Kogo et al., 2022**
-
-The study found Kenyan maize farmers responding to climate change through changes in planting dates, crop diversification, early-maturing cultivars, and drought-tolerant varieties.
-
-**5. “Climate Change Impacts and Relevance of Smallholder Farmers' Response in Arid and Semi-Arid Lands in Kenya” — 2021**
-
-This research studied farmers in Kenya's ASAL regions and reported drought, flooding, food shortages, water scarcity, and the importance of crop and water-management adaptation.
-
-**6. “Effects of Climate Variability and Change on Agricultural Production: The Case of Small-Scale Farmers in Kenya” — 2016**
-
-This study analyzed how changes in temperature and rainfall affect agricultural production and revenues of Kenyan smallholder farmers.
-
-**7. “Economy-wide Impacts of Climate-Induced Agricultural Yield Changes in Kenya” — 2026**
-
-This study examines how climate-driven agricultural yield changes can affect Kenya beyond individual farms and influence the wider economy.
-
-> Direct links to all of these papers and reports are included in the downloadable `README.md`.
+TerraPlan currently processes **191 real historical Conduit observations from June 2025** through its historical replay pipeline.
 
 ---
 
-## 🚀 Run Locally
+# 🗣️ Designed for Kenyan Farmers
+
+TerraPlan is designed to make climate intelligence more locally accessible.
+
+### English ↔ Kiswahili
+
+The interface includes more than **680 translated UI strings**.
+
+```text
+Crop Simulator
+→ Kiigaji cha Mazao
+
+Drought Risk
+→ Hatari ya Ukame
+
+Farm Digital Twin
+→ Pacha Dijitali wa Shamba
+
+Heavy Rainfall
+→ Mvua Kubwa
+```
+
+### Kenya-Relevant Crops
+
+The system focuses on crops commonly relevant to Kenyan farming, including:
+
+**Maize, Beans, Sorghum, Cowpea, Sukuma Wiki, Tomatoes and Potatoes.**
+
+It also uses familiar measurements such as:
+
+**hectares · °C · millimetres of rainfall · m/s**
+
+---
+
+# 🏗️ Technology
+
+**Frontend**
+
+React 19 · TypeScript · Tailwind CSS · MapLibre GL JS · Turf.js
+
+**Backend**
+
+FastAPI · Python 3.12 · SQLAlchemy · Pydantic
+
+**Data**
+
+PostgreSQL · PostGIS · Redis
+
+**Infrastructure**
+
+Docker · Docker Compose
+
+**Testing**
+
+Pytest · Hypothesis · Vitest
+
+The backend includes **420+ automated tests** covering environmental processing, database behaviour, APIs and decision-engine logic.
+
+---
+
+# 🌍 Why It Matters
+
+TerraPlan is designed around a simple idea:
+
+**Kenyan farmers should not need to understand satellite systems, climate models, soil databases and weather-station measurements to make one farming decision.**
+
+TerraPlan translates those signals into questions farmers actually care about:
+
+```text
+Is this crop suitable?
+        ↓
+Is there enough water?
+        ↓
+What climate risk exists?
+        ↓
+What should I do?
+```
+
+The same platform can grow further into:
+
+* County-level agricultural intelligence
+* Long Rains and Short Rains planning
+* Additional Conduit stations
+* Mobile and SMS farmer alerts
+* Cooperative and extension-officer dashboards
+* More Kenya-specific crops
+* Wider East African climate-smart agriculture support
+
+---
+
+# 🚀 Run Locally
 
 ```bash
 git clone <repository-url>
@@ -243,8 +418,6 @@ docker compose build
 docker compose up -d
 ```
 
-Open:
-
 ```text
 Frontend:  http://localhost:3000
 API:       http://localhost:8000
@@ -253,29 +426,8 @@ API Docs:  http://localhost:8000/docs
 
 ---
 
-## ⚠️ Limitations
+# 🌱 TerraPlan
 
-TerraPlan is a **decision-support system**, not a replacement for agronomists, laboratory soil testing, or local agricultural expertise.
+> **Understand the farm. Understand the climate. Make a better decision before planting.**
 
-* SoilGrids provides modeled soil estimates.
-* Satellite observations can be affected by clouds and acquisition timing.
-* Weather forecasts change as new observations become available.
-* Environmental datasets have different spatial and temporal resolutions.
-* JKUAT Conduit currently uses imported historical observations.
-* The water model is a planning estimate, not a full irrigation-engineering model.
-
----
-
-## 🌱 Vision
-
-TerraPlan's goal is simple:
-
-> **Give farmers one place where environmental data becomes an understandable agricultural decision.**
-
-Instead of asking farmers to interpret several separate environmental systems, TerraPlan aims to answer the question that actually matters:
-
-> **“What does all of this mean for my land, my crop, and my next decision?”**
-
-<p align="center">
-  <strong>TerraPlan — Understand your land before you plant</strong>
-</p>
+**JKUAT Conduit + Environmental Data → Farm Intelligence → Farmer Action**
