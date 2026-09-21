@@ -277,5 +277,5 @@ Instead of asking farmers to interpret several separate environmental systems, T
 > **“What does all of this mean for my land, my crop, and my next decision?”**
 
 <p align="center">
-  <strong>TerraPlan — Understand your land before you plant.</strong>
+  <strong>TerraPlan — Understand your land before you plant</strong>
 </p>
