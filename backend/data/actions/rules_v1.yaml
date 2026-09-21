@@ -1,0 +1,89 @@
+version: "1"
+last_updated: "2026-09-08"
+rules:
+  - id: "drought-irrigate-or-mulch"
+    hazard: "drought"
+    applicable_levels:
+      - "medium"
+      - "high"
+    priority: 1
+    text: "Consider mulching around crops to reduce soil moisture loss. If irrigation is available, schedule it for early morning to minimise evaporation."
+    conflict_with:
+      - "heavy-rain-field-drainage"
+    review_date: "2027-01-01"
+    source: "FAO Irrigation and Drainage Paper 56"
+
+  - id: "drought-shift-planting"
+    hazard: "drought"
+    applicable_levels:
+      - "high"
+    priority: 2
+    text: "Evaluate shifting the planting window toward months with higher rainfall in the seasonal profile."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO Crop evapotranspiration guidelines"
+
+  - id: "heat-protect-seedlings"
+    hazard: "heat"
+    applicable_levels:
+      - "medium"
+      - "high"
+    priority: 1
+    text: "Use shade netting or intercropping with taller crops to protect heat-sensitive seedlings during germination."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO Plant production guidelines"
+
+  - id: "heat-shift-timing"
+    hazard: "heat"
+    applicable_levels:
+      - "high"
+    priority: 2
+    text: "Consider a cooler planting window or selecting a heat-tolerant variety if sustained high temperatures are expected."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO crop thermal requirements"
+
+  - id: "heavy-rain-field-drainage"
+    hazard: "heavy_rainfall"
+    applicable_levels:
+      - "medium"
+      - "high"
+    priority: 1
+    text: "Check and clear field drainage channels before anticipated heavy rain. Avoid planting or spraying during heavy rain events."
+    conflict_with:
+      - "drought-irrigate-or-mulch"
+    review_date: "2027-01-01"
+    source: "FAO drainage guidelines"
+
+  - id: "heavy-rain-harvest-delay"
+    hazard: "heavy_rainfall"
+    applicable_levels:
+      - "high"
+    priority: 2
+    text: "Delay harvest operations until the field dries to prevent soil compaction and crop contamination."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO post-harvest guidelines"
+
+  - id: "flood-review-drainage"
+    hazard: "flood_exposure"
+    applicable_levels:
+      - "medium"
+      - "high"
+    priority: 1
+    text: "Review local flood guidance for this area. Inspect bunds, drainage exits, and low-lying field sections before the rainy season."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO flood management"
+
+  - id: "wind-protect-structures"
+    hazard: "wind"
+    applicable_levels:
+      - "medium"
+      - "high"
+    priority: 1
+    text: "Secure loose greenhouse covers and storage structures. Stake tall crops or provide windbreaks where practical."
+    conflict_with: []
+    review_date: "2027-01-01"
+    source: "FAO wind protection guidelines"

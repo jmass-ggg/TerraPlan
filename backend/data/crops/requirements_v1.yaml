@@ -1,0 +1,471 @@
+version: "1.1"
+last_updated: "2026-09-18"
+crops:
+  - name: "Maize"
+    data_version: "1.0"
+    category: "cereal"
+    crop_type: "annual"
+    family: "poaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Maize", "Sorghum", "Wheat", "Rice"]
+    source_citation: "FAO. (2012). Crop production - Maize. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 10
+      optimum_c: 25
+      max_c: 35
+    rainfall_per_duration_mm:
+      min: 400
+      max: 760
+    soil_ph:
+      min: 5.5
+      max: 7.5
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - silt_loam
+      - sandy_loam
+    drought_tolerance: 0.45
+    heat_tolerance_ceiling_c: 35
+    duration_months: 4
+
+  - name: "Wheat"
+    data_version: "1.0"
+    category: "cereal"
+    crop_type: "annual"
+    family: "poaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Wheat", "Maize", "Sorghum", "Rice"]
+    source_citation: "FAO. (2012). Crop production - Wheat. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 3
+      optimum_c: 17
+      max_c: 28
+    rainfall_per_duration_mm:
+      min: 250
+      max: 500
+    soil_ph:
+      min: 5.5
+      max: 7.5
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - silt_loam
+    drought_tolerance: 0.40
+    heat_tolerance_ceiling_c: 30
+    duration_months: 5
+
+  - name: "Rice"
+    data_version: "1.0"
+    category: "cereal"
+    crop_type: "annual"
+    family: "poaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Rice", "Maize", "Sorghum", "Wheat"]
+    source_citation: "FAO. (2012). Crop production - Rice. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 20
+      optimum_c: 28
+      max_c: 38
+    rainfall_per_duration_mm:
+      min: 900
+      max: 2000
+    soil_ph:
+      min: 5.0
+      max: 7.0
+    soil_texture_preference:
+      - clay
+      - clay_loam
+      - silty_clay
+    drought_tolerance: 0.10
+    heat_tolerance_ceiling_c: 38
+    duration_months: 5
+
+  - name: "Potato"
+    data_version: "1.0"
+    category: "root"
+    crop_type: "annual"
+    family: "solanaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Potato", "Tomato"]
+    source_citation: "FAO. (2012). Crop production - Potato. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 7
+      optimum_c: 17
+      max_c: 28
+    rainfall_per_duration_mm:
+      min: 300
+      max: 625
+    soil_ph:
+      min: 4.8
+      max: 6.5
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.20
+    heat_tolerance_ceiling_c: 30
+    duration_months: 4
+
+  - name: "Tomato"
+    data_version: "1.0"
+    category: "vegetable"
+    crop_type: "annual"
+    family: "solanaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Tomato", "Potato"]
+    source_citation: "FAO. (2012). Crop production - Tomato. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 10
+      optimum_c: 22
+      max_c: 32
+    rainfall_per_duration_mm:
+      min: 300
+      max: 600
+    soil_ph:
+      min: 5.5
+      max: 7.0
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.25
+    heat_tolerance_ceiling_c: 34
+    duration_months: 4
+
+  - name: "Onion"
+    data_version: "1.0"
+    category: "vegetable"
+    crop_type: "annual"
+    family: "amaryllidaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Onion"]
+    source_citation: "FAO. (2012). Crop production - Onion. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 13
+      optimum_c: 20
+      max_c: 30
+    rainfall_per_duration_mm:
+      min: 350
+      max: 500
+    soil_ph:
+      min: 6.0
+      max: 7.5
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.20
+    heat_tolerance_ceiling_c: 32
+    duration_months: 4
+
+  - name: "Beans"
+    data_version: "1.0"
+    category: "legume"
+    crop_type: "annual"
+    family: "fabaceae"
+    rotation:
+      preferred_after: ["Maize", "Wheat", "Rice", "Sorghum"]
+      avoid_after: ["Beans", "Soybean"]
+    source_citation: "FAO. (2012). Crop production - Common Bean. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 15
+      optimum_c: 22
+      max_c: 29
+    rainfall_per_duration_mm:
+      min: 250
+      max: 500
+    soil_ph:
+      min: 5.5
+      max: 7.0
+    soil_texture_preference:
+      - loam
+      - sandy_loam
+      - silt_loam
+    drought_tolerance: 0.30
+    heat_tolerance_ceiling_c: 32
+    duration_months: 3
+
+  - name: "Soybean"
+    data_version: "1.0"
+    category: "legume"
+    crop_type: "annual"
+    family: "fabaceae"
+    rotation:
+      preferred_after: ["Maize", "Wheat", "Rice", "Sorghum"]
+      avoid_after: ["Soybean", "Beans"]
+    source_citation: "FAO. (2012). Crop production - Soybean. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 15
+      optimum_c: 24
+      max_c: 33
+    rainfall_per_duration_mm:
+      min: 450
+      max: 700
+    soil_ph:
+      min: 6.0
+      max: 7.0
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - silt_loam
+    drought_tolerance: 0.35
+    heat_tolerance_ceiling_c: 35
+    duration_months: 4
+
+  - name: "Sorghum"
+    data_version: "1.0"
+    category: "cereal"
+    crop_type: "annual"
+    family: "poaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Sorghum", "Maize", "Wheat", "Rice"]
+    source_citation: "FAO. (2012). Crop production - Sorghum. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 15
+      optimum_c: 28
+      max_c: 38
+    rainfall_per_duration_mm:
+      min: 250
+      max: 650
+    soil_ph:
+      min: 5.5
+      max: 7.5
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - clay
+      - sandy_loam
+    drought_tolerance: 0.80
+    heat_tolerance_ceiling_c: 40
+    duration_months: 4
+
+  - name: "Cabbage"
+    data_version: "1.0"
+    category: "vegetable"
+    crop_type: "annual"
+    family: "brassicaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Cabbage"]
+    source_citation: "FAO. (2012). Crop production - Cabbage. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 5
+      optimum_c: 15
+      max_c: 24
+    rainfall_per_duration_mm:
+      min: 350
+      max: 500
+    soil_ph:
+      min: 6.0
+      max: 7.5
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - silt_loam
+    drought_tolerance: 0.15
+    heat_tolerance_ceiling_c: 27
+    duration_months: 3
+
+  - name: "Carrot"
+    data_version: "1.0"
+    category: "root"
+    crop_type: "annual"
+    family: "apiaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Carrot"]
+    source_citation: "FAO. (2012). Crop production - Carrot. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 8
+      optimum_c: 17
+      max_c: 25
+    rainfall_per_duration_mm:
+      min: 300
+      max: 500
+    soil_ph:
+      min: 5.5
+      max: 7.0
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.20
+    heat_tolerance_ceiling_c: 28
+    duration_months: 3
+
+  - name: "Sweet Potato"
+    data_version: "1.0"
+    category: "root"
+    crop_type: "annual"
+    family: "convolvulaceae"
+    rotation:
+      preferred_after: ["Beans", "Soybean"]
+      avoid_after: ["Sweet Potato"]
+    source_citation: "FAO. (2012). Crop production - Sweet Potato. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 18
+      optimum_c: 26
+      max_c: 35
+    rainfall_per_duration_mm:
+      min: 400
+      max: 750
+    soil_ph:
+      min: 5.5
+      max: 7.0
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.50
+    heat_tolerance_ceiling_c: 37
+    duration_months: 4
+
+  - name: "Mango"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "anacardiaceae"
+    source_citation: "FAO. (2012). Crop production - Mango. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 24
+      optimum_c: 28
+      max_c: 36
+    rainfall_per_duration_mm:
+      min: 600
+      max: 1500
+    soil_ph:
+      min: 5.5
+      max: 7.5
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - clay_loam
+    drought_tolerance: 0.60
+    heat_tolerance_ceiling_c: 38
+    duration_months: 5
+
+  - name: "Banana"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "musaceae"
+    source_citation: "FAO. (2012). Crop production - Banana. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 15
+      optimum_c: 27
+      max_c: 35
+    rainfall_per_duration_mm:
+      min: 1000
+      max: 2500
+    soil_ph:
+      min: 5.5
+      max: 7.0
+    soil_texture_preference:
+      - loam
+      - clay_loam
+      - silt_loam
+    drought_tolerance: 0.15
+    heat_tolerance_ceiling_c: 37
+    duration_months: 9
+
+  - name: "Orange"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "rutaceae"
+    source_citation: "FAO. (2012). Crop production - Citrus. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 13
+      optimum_c: 25
+      max_c: 35
+    rainfall_per_duration_mm:
+      min: 500
+      max: 1200
+    soil_ph:
+      min: 6.0
+      max: 7.5
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.40
+    heat_tolerance_ceiling_c: 37
+    duration_months: 10
+
+  - name: "Papaya"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "caricaceae"
+    source_citation: "FAO. (2012). Crop production - Papaya. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 21
+      optimum_c: 27
+      max_c: 33
+    rainfall_per_duration_mm:
+      min: 800
+      max: 2000
+    soil_ph:
+      min: 6.0
+      max: 7.0
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.25
+    heat_tolerance_ceiling_c: 35
+    duration_months: 10
+
+  - name: "Avocado"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "lauraceae"
+    source_citation: "FAO. (2012). Crop production - Avocado. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 13
+      optimum_c: 22
+      max_c: 30
+    rainfall_per_duration_mm:
+      min: 600
+      max: 1200
+    soil_ph:
+      min: 5.0
+      max: 7.0
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+      - silt_loam
+    drought_tolerance: 0.30
+    heat_tolerance_ceiling_c: 32
+    duration_months: 12
+
+  - name: "Pineapple"
+    data_version: "1.0"
+    category: "fruit"
+    crop_type: "perennial"
+    family: "bromeliaceae"
+    source_citation: "FAO. (2012). Crop production - Pineapple. FAO Plant Production and Protection Series."
+    temperature:
+      min_c: 18
+      optimum_c: 26
+      max_c: 32
+    rainfall_per_duration_mm:
+      min: 600
+      max: 1500
+    soil_ph:
+      min: 4.5
+      max: 6.5
+    soil_texture_preference:
+      - sandy_loam
+      - loam
+    drought_tolerance: 0.70
+    heat_tolerance_ceiling_c: 34
+    duration_months: 14
